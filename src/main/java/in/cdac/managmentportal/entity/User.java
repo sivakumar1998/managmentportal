@@ -2,6 +2,8 @@ package in.cdac.managmentportal.entity;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,6 +38,7 @@ public class User {
 	private String cd_mobile;
 	@Column(name = "cd_phone")
 	private String cd_phone;
+	
 	@Column(name = "password")
 	private String password;
 	@Column(name = "username")
