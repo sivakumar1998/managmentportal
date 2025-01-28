@@ -14,8 +14,11 @@ public class SecurityConfig {
 		http.csrf(csrf->csrf.ignoringRequestMatchers("/createuser"));
 		http.authorizeHttpRequests(
 				requests -> requests
-				.requestMatchers("/createuser").permitAll()
-				.requestMatchers("/hi").authenticated())
+				.anyRequest().permitAll()
+//				.requestMatchers("/login").permitAll()
+//				.requestMatchers("/createuser").permitAll()
+//				.requestMatchers("/hi").authenticated())
+				)
 				.formLogin(Customizer.withDefaults()).httpBasic(Customizer.withDefaults());
 		return http.build();
 	}
